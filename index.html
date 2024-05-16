@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <title>KCC 24</title>
+</head>
+
+<body
+    class="w-screen bg-gradient-to-b from-blue-900 from-55% via-white via-80% to-yellow-400 to-93% backdrop-blur-17 font-sans"
+    style="font-family: 'Roboto Flex', sans-serif;">
+
+
+    <!-- Hero section -->
+    <div class="h-screen bg-fixed bg-[url('/assets/hero1.png')] bg-center bg-top">
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav class="">
+                <div
+                    class="max-w-screen flex flex-wrap items-center justify-between mx-auto p-4 backdrop-blur-md bg-white/30 md:backdrop-blur-none md:bg-transparent">
+                    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="/assets/logo.png" class="h-8" alt="Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap">KCC</span>
+                    </a>
+                    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <a href="#"
+                            class="inline-flex items-center justify-center rounded-full border border-gray-300 text-slate-50 font-display font-semibold text-md leading-trim text-capitalize shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-600 px-6 py-1">
+                            Download App
+                        </a>
+                        <button data-collapse-toggle="navbar-cta" type="button"
+                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-cta" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 h-screen md:h-auto"
+                        id="navbar-cta">
+                        <ul
+                            class="flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-sm font-normal leading-6 text-slate-50 rounded hover:bg-zinc-500 hover:font-semibold md:hover:bg-transparent md:hover:text-yellow-700 md:hover:font-semibold"
+                                    aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-sm font-normal leading-6 text-slate-50 rounded hover:bg-zinc-500 hover:font-semibold md:hover:bg-transparent md:hover:text-yellow-700 md:hover:font-semibold">About</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-sm font-normal leading-6 text-slate-50 rounded hover:bg-zinc-500 hover:font-semibold md:hover:bg-transparent md:hover:text-yellow-700 md:hover:font-semibold">Services</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block py-2 px-3 md:p-0 text-sm font-normal leading-6 text-slate-50 rounded hover:bg-zinc-500 hover:font-semibold md:hover:bg-transparent md:hover:text-yellow-700 md:hover:font-semibold">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+        </header>
+
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-56">
+                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+                        data-taos-offset="400">
+                        Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span
+                                class="absolute inset-0" aria-hidden="true"></span>Read more <span
+                                aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-white drop-shadow-md sm:text-6xl delay-[300ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(0.6)] taos:opacity-0"
+                        data-taos-offset="500">KCC24 - A
+                        Confluence of
+                        Faith, Learning, and Fellowship</h1>
+                    <p class=" mt-6 text-lg leading-8 text-slate-50 drop-shadow-md delay-[300ms] duration-[600ms] taos:[transform:translate3d(0,250px,0)_scale(0.6)] taos:opacity-0"
+                        data-taos-offset="300">Experience the Spirit of Unity and
+                        Renewal with
+                        Jesus Youth</p>
+                    <div class=" mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#"
+                            class=" w-322 h-75 left-1523 top-778 flex items-center justify-center rounded-full bg-white border border-gray-300 text-yellow-400 font-display font-semibold text-xl leading-trim text-capitalize shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-600 px-8 py-2 delay-[300ms] duration-[600ms] taos:[transform:translate3d(0,300px,0)_scale(0.6)] taos:opacity-0"
+                            data-taos-offset="300">
+                            Download App
+                        </a>
+
+                        <a href="#" class="text-sm font-semibold leading-6 text-slate-50">Learn more <span
+                                aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="h-auto bg-center bg-top">
+
+        <div class="p-4 md:p-10 flex flex-col md:flex-row align-center justify-evenly items-center align-middle">
+
+            <a href="#"
+                class="max-w-md md:mr-8 py-10 md:py-14 px-6 bg-[#61807C] bg-opacity-60 backdrop-blur-lg rounded-[40px] shadow hover:bg-[#61807C]-100 delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0"
+                data-taos-offset="300">
+
+                <div class="flex flex-col md:flex-row w-full align-center items-center">
+                    <p class="text-white flex-1 md:flex-2">About KCC24</p>
+                    <hr class="h-px my-2 md:my-0 md:mx-4 flex-2 md:flex-4 bg-slate-100 border-0 md:w-full">
+                </div>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Welcome to the Kerala Campus Conference
+                    2024!</h5>
+                <p class="font-light text-slate-100">Since its inception, the Kerala Campus Conference (KCC) has served
+                    as a dynamic gathering point for students and youth across Kerala, offering a vibrant platform for
+                    spiritual growth, fellowship, and intellectual engagement. Organized by Jesus Youth, an
+                    international Catholic movement with a charismatic spirituality, KCC24 continues a long-standing
+                    tradition of fostering faith, character, and friendships in a joyful and sacred environment.</p>
+            </a>
+
+            <img class="h-auto max-w-sm m-0 mt-8 md:mt-0 delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0 hidden md:block"
+                data-taos-offset="400" src="/assets/about_right.png" alt="image description">
+
+        </div>
+
+        <div class="p-4 md:p-10 flex flex-col md:flex-row align-center justify-evenly items-center align-middle">
+
+            <img class="h-auto max-w-sm m-0 mb-8 md:mb-0 delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0 hidden md:block"
+                data-taos-offset="200" src="/assets/about_left.png" alt="image description">
+
+            <a href="#"
+                class="max-w-md py-10 md:py-14 px-6 bg-[#61807C] bg-opacity-60 backdrop-blur-lg rounded-[40px] shadow hover:bg-[#61807C]-100 delay-[300ms] duration-[600ms] taos:translate-x-[200px] taos:opacity-0"
+                data-taos-offset="200">
+
+                <div class="flex flex-col md:flex-row w-full align-center items-center">
+                    <p class="text-white flex-1 md:flex-2">About KCC24</p>
+                    <hr class="h-px my-2 md:my-0 md:mx-4 flex-2 md:flex-4 bg-slate-100 border-0 md:w-full">
+                </div>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">Welcome to the Kerala Campus Conference
+                    2024!</h5>
+                <p class="font-light text-slate-100">Since its inception, the Kerala Campus Conference (KCC) has served
+                    as a dynamic gathering point for students and youth across Kerala, offering a vibrant platform for
+                    spiritual growth, fellowship, and intellectual engagement. Organized by Jesus Youth, an
+                    international Catholic movement with a charismatic spirituality, KCC24 continues a long-standing
+                    tradition of fostering faith, character, and friendships in a joyful and sacred environment.</p>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="h-auto bg-center bg-top p-4 md:p-10">
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="grid gap-4">
+                <div class="duration-[500ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="">
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <div class="duration-[500ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="">
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <div class="duration-[500ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="">
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <div class="duration-[500ms] taos:[transform:perspective(2500px)_rotateX(-100deg)] taos:invisible taos:[backface-visibility:hidden]"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="">
+                </div>
+                <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:invisible"
+                    data-taos-offset="200">
+                    <img class="h-auto max-w-full rounded-lg"
+                        src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="h-auto bg-center bg-top p-4 md:p-10">
+        <div class="p-4 md:p-10 flex flex-col md:flex-row align-center justify-evenly items-center align-middle">
+
+
+            <form
+                class="max-w-sm w-[360px] mx-auto bg-slate-300 bg-opacity-40 backdrop-blur-lg py-8 px-10 rounded-2xl mx-[0px] my-[0px]">
+                <div class="mb-3">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your
+                        name</label>
+                    <input type="text" id="name"
+                        class=" bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="name@flowbite.com" required />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your
+                        email</label>
+                    <input type="email" id="email"
+                        class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                        placeholder="name@flowbite.com" required />
+                </div>
+                <div class="mb-5">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Message</label>
+                    <textarea id="message" rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-100 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Type your message..." required></textarea>
+                </div>
+
+                <button type="submit"
+                    class="text-white w-full bg-[#61807C] bg-opacity-90 backdrop-blur-lg hover:bg-[#2C4533] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Send
+                    message</button>
+            </form>
+            <img class="h-[500px] object-cover rounded-xl max-w-sm m-0 mb-8 md:mb-0 delay-[300ms] duration-[600ms] taos:translate-x-[-200px] taos:opacity-0 hidden md:block"
+                data-taos-offset="200" src="/assets/hero1.png" alt="image description">
+        </div>
+    </div>
+    <div class="h-auto bg-center bg-top">
+        <div class="w-full p-4 text-center bg-slate-200 bg-opacity-60 backdrop-blur-lg rounded-lg shadow sm:p-8">
+            <h5 class="mb-2 text-3xl font-bold text-gray-900 ">Work fast from anywhere</h5>
+            <p class="mb-5 text-base text-gray-500 sm:text-lg ">Stay up to date and move work forward
+                with Flowbite on iOS & Android. Download the app today.</p>
+            <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                <a href=""
+                    class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center gap-4 px-4 py-2.5">
+                    <i class="fa-brands fa-apple fa-2xl"></i>
+                    <div class="text-left rtl:text-right">
+                        <div class="mb-1 text-xs">Download on the</div>
+                        <div class="-mt-1 font-sans text-sm font-semibold">Mac App Store</div>
+                    </div>
+                </a>
+                <a href=""
+                    class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center gap-4 px-4 py-2.5">
+                    <i class="fa-brands fa-google-play fa-2xl"></i>
+                    <div class="text-left rtl:text-right">
+                        <div class="mb-1 text-xs">Get in on</div>
+                        <div class="-mt-1 font-sans text-sm font-semibold">Google Play</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 bg-opacity-60 text-center py-4 text-white">
+        <p>&copy; 2021 KCC24. All rights reserved.</p>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/d77661e750.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</html>
