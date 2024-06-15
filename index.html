@@ -28,6 +28,12 @@
         content="Join us for the Kerala Campus Conference 2024. Proclaim from the rooftops!" />
     <meta name="twitter:image" content="./assets/hero.jpg" />
 
+    <meta property="og:image" content="./assets/hero.jpg" />
+    <meta property="og:image:secure_url" content="./assets/hero.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="inauguration of kcc" />
 
     <meta property="og:site_name" content="Kerala Campus Conference 2024">
     <meta property="og:title" content="Kerala Campus Conference 2024">
@@ -72,7 +78,8 @@
     <header class="bg-cover bg-center h-dvh h-screen" style="background-image: url('./assets/hero1.jpg');">
         <div class="bg-black bg-opacity-50 h-full flex justify-center">
             <div class="absolute bottom-10 flex flex-col justify-end items-center md:static md:justify-center">
-                <img src="./assets/kcclogo.png" class="object-cover mb-4 w-56 drop-shadow-md" alt="KCC Logo">
+                <img src="./assets/kcclogo.png" class="object-cover mb-4 w-56 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
+                    alt="KCC Logo">
                 <h1 class="text-4xl text-center font-bold text-white mb-3">Kerala Campus Conference 2024</h1>
                 <p class="text-xs mb-3">
                     <span class="bg-red-500 px-2">PROCLAIM</span><span class="bg-sky-500 px-2">FROM</span><span
@@ -80,12 +87,15 @@
                 </p>
                 <p class="text-lg text-center text-white mb-2">August 23 - 26</p>
                 <p class="text-lg text-center text-white mb-6">Rajagiri Campus, Kalamassery</p>
-                <div class="mt-4">
+                <div class="mt-4 flex gap-4">
                     <a href="#about" class="bg-transparent text-white px-4 py-2 border border-white rounded-full">View
                         Detail</a>
-                    <a href="./assets/docs/KCC THEME DOC.pdf" download="KCC THEME DOC.pdf"
-                        class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full ml-4 pointer-events-none">Download
-                        Theme</a>
+                    <!-- <a href="./assets/docs/KCC THEME DOC.pdf" download="KCC THEME DOC.pdf"
+                        class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full ml-4">Download
+                        Theme</a> -->
+                    <p onclick="showModalTheme()" class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full">
+                        Download
+                        Theme</p>
                 </div>
             </div>
         </div>
@@ -468,7 +478,7 @@
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                         <button type="button"
-                            class="inline-flex w-full justify-center rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 sm:ml-3 sm:w-auto"
+                            class="inline-flex w-full justify-center rounded-md bg-sky-500 px-3 py-2 text-sm font-semibold text-white transition shadow-sm hover:bg-sky-600 sm:ml-3 sm:w-auto"
                             onclick="hideModal()">Wait</button>
                         <button type="button"
                             class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
@@ -478,12 +488,49 @@
             </div>
         </div>
     </div>
+    <div id="modalTheme" class="hidden fixed inset-0 z-10" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <!-- Background backdrop -->
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-75 backdrop-blur-md transition-opacity"></div>
 
-    <script>
-        function hideModal() {
-            document.getElementById('modal').classList.add('hidden');
-        }
-    </script>
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div
+                    class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div
+                                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                                <svg class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0018 14.158V13a6 6 0 10-12 0v1.159c0 .414-.162.81-.435 1.106L3 17h5m0 0v1a2 2 0 002 2h4a2 2 0 002-2v-1m-6 0h6" />
+                                </svg>
+                            </div>
+                            <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                <h3 class="text-base font-semibold leading-6 text-gray-900" id="modal-title">The Theme
+                                    is under processing</h3>
+                                <div class="mt-2">
+                                    <p class="text-sm text-gray-500">The theme is available soon. Please wait for
+                                        further instructions. Thank you for your patience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <button type="button"
+                            class="inline-flex w-full justify-center rounded-md bg-yellow-500 px-3 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-yellow-600 sm:ml-3 sm:w-auto"
+                            onclick="hideModalTheme()">Ok</button>
+                        <button type="button"
+                            class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                            onclick="hideModalTheme()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 
@@ -497,6 +544,13 @@
 
         function hideModal() {
             document.getElementById('modal').classList.add('hidden');
+        }
+        function showModalTheme() {
+            document.getElementById('modalTheme').classList.remove('hidden');
+        }
+
+        function hideModalTheme() {
+            document.getElementById('modalTheme').classList.add('hidden');
         }
     </script>
 
