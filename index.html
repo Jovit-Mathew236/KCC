@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-
+    <link href="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/css/pagedone.css" />
     <link href="https://db.onlinewebfonts.com/c/83cafa6099ebd5cf8a6af2cc23818fca?family=Novitha+ScriptDemo"
         rel="stylesheet">
     <title>KCC 24</title>
@@ -315,6 +315,49 @@
         </div>
     </section>
 
+
+    <div class="w-full h-96 rounded-2xl flex gap-9 flex-col items-center justify-center bg-cover bg-center">
+        <div class="flex items-start justify-center w-full gap-1.5 count-down-main">
+
+            <div class="timer">
+                <div
+                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] flex items-center justify-center flex-col gap-1 px-3">
+                    <h3 class="countdown-element days font-manrope font-semibold text-2xl text-white text-center">
+                    </h3>
+                    <p class="text-lg uppercase font-normal text-white mt-1 text-center w-full">days</p>
+                </div>
+            </div>
+
+            <div class="timer">
+                <div
+                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] flex items-center justify-center flex-col gap-1 px-3">
+                    <h3 class="countdown-element hours font-manrope font-semibold text-2xl text-white text-center">
+                    </h3>
+                    <p class="text-lg uppercase font-normal text-white mt-1 text-center w-full">Hour</p>
+                </div>
+            </div>
+
+            <div class="timer">
+                <div
+                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] flex items-center justify-center flex-col gap-1 px-3">
+                    <h3 class="countdown-element minutes font-manrope font-semibold text-2xl text-white text-center">
+                    </h3>
+                    <p class="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">Minutes</p>
+                </div>
+            </div>
+
+            <div class="timer">
+                <div
+                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] flex items-center justify-center flex-col gap-1 px-3">
+                    <h3 class="countdown-element seconds font-manrope font-semibold text-2xl text-white text-center">
+                    </h3>
+                    <p class="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">Seconds</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Footer Section -->
     <footer class="py-10 bg-slate-950 bg-opacity-30 backdrop-blur-md">
         <div class="container mx-auto px-6 md:px-12 lg:px-24">
@@ -349,7 +392,63 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script>
+    <script>
+        // count-down timer
+        let dest = new Date("aug 23, 2024 10:00:00").getTime();
+        let x = setInterval(function () {
+            let now = new Date().getTime();
+            let diff = dest - now;
 
+            // Check if the countdown has reached zero or negative
+            if (diff <= 0) {
+                clearInterval(x); // Stop the countdown
+                return; // Exit the function
+            }
+
+            let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            if (days < 10) {
+                days = `0${days}`;
+            }
+            if (hours < 10) {
+                hours = `0${hours}`;
+            }
+            if (minutes < 10) {
+                minutes = `0${minutes}`;
+            }
+            if (seconds < 10) {
+                seconds = `0${seconds}`;
+            }
+
+            // Get elements by class name
+            let countdownElements = document.getElementsByClassName("countdown-element");
+
+            // Loop through the elements and update their content
+            for (let i = 0; i < countdownElements.length; i++) {
+                let className = countdownElements[i].classList[1]; // Get the second class name
+                switch (className) {
+                    case "days":
+                        countdownElements[i].innerHTML = days;
+                        break;
+                    case "hours":
+                        countdownElements[i].innerHTML = hours;
+                        break;
+                    case "minutes":
+                        countdownElements[i].innerHTML = minutes;
+                        break;
+                    case "seconds":
+                        countdownElements[i].innerHTML = seconds;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }, 1000);
+    </script>
 </body>
 
 </html>
