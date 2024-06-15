@@ -29,6 +29,7 @@
           body {
             font-family: "Red Hat Display", sans-serif;
             font-optical-sizing: auto;
+            scroll-behavior: smooth;
           }
           .fontNovitha{
             font-family: "Novitha ScriptDemo";
@@ -50,20 +51,24 @@
 
 <body class="bg-gray-900 text-white bg-cover" style="background-image: url('./assets/bg.png');">
     <!-- Header Section -->
-    <header class="bg-cover bg-center h-screen" style="background-image: url('./assets/hero1.png');">
-        <div
-            class="bg-black bg-opacity-50 h-full flex flex-col justify-end absolute md:static bottom-10 md:justify-center  items-center">
-            <img src="./assets/kcclogo.png" class="object-cover" alt="KCC Logo" class="mb-4">
-            <h1 class="text-4xl text-center font-bold">Kerala Campus Conference 2024</h1>
-            <div class="mt-4">
-                <a href="#" class="bg-trans text-white px-4 py-2 border rounded-full">View Detail</a>
-                <a href="#" class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full ml-4">Register Now</a>
+    <header class="bg-cover bg-center h-screen" style="background-image: url('./assets/hero.jpg');">
+        <div class="bg-black bg-opacity-50 h-full flex justify-center">
+            <div
+                class="absolute md:static bottom-10 flex flex-col justify-end  items-center md:static md:justify-center">
+                <img src="./assets/kcclogo.png" class="object-cover" alt="KCC Logo" class="mb-4">
+                <h1 class="text-4xl text-center font-bold">Kerala Campus Conference 2024</h1>
+                <div class="mt-4">
+                    <a href="#about" class="bg-trans text-white px-4 py-2 border rounded-full">View Detail</a>
+                    <a href="./assets/docs/KCC THEME DOC.pdf" download="KCC THEME DOC.pdf"
+                        class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full ml-4">Download
+                        Theme</a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section class="py-12 px-6">
+    <section id="about" class="py-12 px-6">
         <div class="md:w-[600px] m-auto">
             <h2 class="text-3xl font-bold mb-4">What is KCC?</h2>
             <p class="mb-6">The Kerala Campus Conference is a distinguished event initiated by the Jesus Youth
@@ -78,7 +83,7 @@
                 <p class="mt-4 font-semibold">Provides leaders with enhanced clarity regarding the ministry's current
                     activities and
                     focuses.
-                    Effectively communicates the ministry's vision to grassroots levels.</p>
+                    Effectively communicates the ministry's vision to grass root levels.</p>
             </div>
             <div class="relative bg-green-500 p-6 rounded-[20px] tiltedl text-center">
                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -196,12 +201,18 @@
 
         <p class="mb-6 w-56 text-center font-thin m-auto">Memorable moments of Kerala Campus Conference 2019</p>
         <div class="w-[110vw] -ml-10 grid grid-cols-3 gap-4 tiltedl-xl">
-            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1" class="rounded">
+            <img src="./assets/kcc191.png" alt="" class="rounded object-cover">
+            <img src="./assets/kcc192.png" alt="" class="rounded object-cover">
+            <img src="./assets/kcc193.png" alt="" class="rounded object-cover">
+            <img src="./assets/kcc194.png" alt="" class="rounded object-cover">
+            <img src="./assets/kcc195.png" alt="" class="rounded object-cover">
+            <img src="./assets/kcc196.png" alt="" class="rounded object-cover">
+            <!-- <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1" class="rounded">
             <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2" class="rounded">
             <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3" class="rounded">
             <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3" class="rounded">
             <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3" class="rounded">
-            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4" class="rounded">
+            <img src="https://via.placeholder.com/300x200" alt="Gallery Image 4" class="rounded"> -->
         </div>
     </section>
 
@@ -211,7 +222,7 @@
 
         <div class="mb-4 flex flex-col ml-4">
             <a href="#" class="text-white font-semibold text-xl mx-2 mb-4">Follow Us</a>
-            <a href="#" class="text-white mx-2">Instagram</a>
+            <a href="https://www.instagram.com/kerala_campus_ministry" class="text-white mx-2">Instagram</a>
             <a href="#" class="text-white mx-2">Facebook</a>
         </div>
         <div class="flex flex-col ml-4 mb-8">
