@@ -177,21 +177,23 @@
     </section>
 
     <!-- About the App Section -->
-    <section class="py-12 px-6">
+    <section class="py-12 px-6 md:w-[600px] m-auto">
         <img src="./assets/kcclogo.png" alt="KCC Logo" class="m-auto mb-4 w-44">
 
         <h2 class="text-xl font-bold mb-4">About the App</h2>
         <p class="mb-6">The app is particularly designed for KCC registration and updates of KCC24. You will get
             notifications regarding different events happening based on KCC24 through the app.</p>
-        <div class="flex flex-col gap-2 w-full text-center md:w-fit">
-            <a href="#"
-                class="bg-gray-900 px-4 py-2 rounded flex items-center justify-center after:ml-4 after:content-[url('./assets/android.png')]">Download
+        <div class="flex flex-col gap-2 w-full text-center md:w-fit md:m-auto">
+            <p onclick="alert('coming soon..')"
+                class="bg-gray-900 px-4 py-2 rounded flex items-center justify-center after:ml-4 after:content-[url('./assets/android.png')]">
+                Download
                 for
-                Android</a>
-            <a href="#"
-                class="bg-gray-900 px-4 py-2 rounded flex items-center justify-center after:ml-4 after:content-[url('./assets/apple.png')]">Download
+                Android</p>
+            <p onclick="alert('coming soon..')"
+                class="bg-gray-900 px-4 py-2 rounded flex items-center justify-center after:ml-4 after:content-[url('./assets/apple.png')]">
+                Download
                 for
-                iOS</a>
+                iOS</p>
         </div>
     </section>
 
@@ -217,18 +219,22 @@
     </section>
 
     <!-- Footer Section -->
-    <footer class="py-6 bg-slate-950">
+    <footer class="py-6 bg-slate-950 bg-opacity-30 backdrop-blur-md	">
         <img src="./assets/kcclogo.png" alt="KCC Logo" class="ml-8 my-8 w-44">
 
-        <div class="mb-4 flex flex-col ml-4">
-            <a href="#" class="text-white font-semibold text-xl mx-2 mb-4">Follow Us</a>
-            <a href="https://www.instagram.com/kerala_campus_ministry" class="text-white mx-2">Instagram</a>
-            <a href="#" class="text-white mx-2">Facebook</a>
-        </div>
-        <div class="flex flex-col ml-4 mb-8">
-            <a href="#" class="text-white font-semibold text-xl mx-2 mb-4">Download App</a>
-            <a href="#" class="text-white mx-2">iOS</a>
-            <a href="#" class="text-white mx-2">Android</a>
+        <div class="flex flex-col  md:flex-row">
+            <div class="mb-4 flex flex-col ml-4">
+                <a href="#" class="text-white font-semibold text-xl mx-2 mb-4">Follow Us</a>
+                <a href="https://www.instagram.com/kerala_campus_ministry" class="text-white mx-2">Instagram</a>
+                <a href="https://youtube.com/@keralacampusministryjesusyouth" class="text-white mx-2">Youtube</a>
+                <a href="https://www.facebook.com/keralacampusministry?mibextid=ZbWKwL"
+                    class="text-white mx-2">Facebook</a>
+            </div>
+            <div class="flex flex-col ml-4 mb-8">
+                <a href="#" class="text-white font-semibold text-xl mx-2 mb-4">Download App</a>
+                <a href="#" class="text-white mx-2">iOS</a>
+                <a href="#" class="text-white mx-2">Android</a>
+            </div>
         </div>
         <img src="./assets/logo.png" alt="KCC Logo" class="m-auto mb-2 w-8">
         <p class="mt-4 text-sm text-center">Copyright © 2024 KCC24 - All Rights Reserved</p>
