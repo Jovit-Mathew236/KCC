@@ -29,6 +29,7 @@
     <link rel="prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
         rel="stylesheet" />
     <script rel="prefetch" src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.0/uicons-brands/css/uicons-brands.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="prefetch"
@@ -143,8 +144,8 @@
         <div class="bg-black bg-opacity-50 h-full flex justify-center">
             <div class="absolute bottom-10 flex flex-col justify-end items-center md:static md:justify-center  delay-[100ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
                 data-taos-offset="0">
-                <img src="./assets/kcclogo.webp"
-                    class="object-cover mb-4 w-56 h-auto drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]" alt="KCC Logo">
+                <img src="./assets/kcclogo.webp" class="object-cover mb-4 w-56 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
+                    alt="KCC Logo">
                 <h1 class="text-4xl text-center font-bold text-white mb-3">Kerala Campus Conference 2024</h1>
                 <p class="text-xs mb-3">
                     <span class="bg-red-500 px-2">PROCLAIM</span><span class="bg-sky-500 px-2">FROM</span><span
@@ -223,11 +224,11 @@
                     <p class="font-bold bg-red-500 w-fit px-2">#profess</p>
                     <p class="text-sm mt-4">To profess our faith to declare it openly and boldly.</p>
                 </div>
-                <img src="./assets/themeprofess.webp" class="h-48 w-fit" alt="Profess Image">
+                <img src="./assets/themeprofess.webp" class="h-48" alt="Profess Image">
             </div>
             <div class="theme-block flex items-center md:w-[640px] md:justify-between gap-6 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
                 data-taos-offset="100">
-                <img src="./assets/themewitness.webp" class="h-44 w-fit" alt="Profess Image">
+                <img src="./assets/themewitness.webp" class="h-44" alt="Profess Image">
                 <div class="theme-content mt-8">
                     <p class="font-bold bg-yellow-500 w-fit px-2">#witness</p>
                     <p class="text-sm mt-4">To witness is to testify the transforming power of God's love in our lives.
@@ -241,7 +242,7 @@
                     <p class="text-sm mt-4">To celebrate faith in campus is to rejoice in the richness of the Catholic
                         journey.</p>
                 </div>
-                <img src="./assets/themecelibrates.webp" class="h-48 w-fit" alt="Profess Image">
+                <img src="./assets/themecelibrates.webp" class="h-48" alt="Profess Image">
             </div>
         </div>
     </section>
@@ -419,7 +420,7 @@
     <!-- About the App Section -->
     <section class="py-12 px-6 md:w-[600px] m-auto">
         <img src="./assets/kcclogo.webp" alt="KCC Logo"
-            class="m-auto mb-4 w-44 h-auto delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            class="m-auto mb-4 w-44 delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
             data-taos-offset="100">
 
         <h2 class="text-xl font-bold mb-4 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
@@ -507,37 +508,65 @@
 
 
     <!-- Footer Section -->
-    <footer class="py-10 bg-slate-950 bg-opacity-30 backdrop-blur-md">
+    <footer class="py-10 bg-slate-950 bg-opacity-30 backdrop-blur-md text-white">
         <div class="container mx-auto px-6 md:px-12 lg:px-24">
             <div class="flex flex-col items-center mb-8">
-                <img src="./assets/kcclogo.webp" alt="KCC Logo" class="w-44 h-auto mb-4">
+                <img src="./assets/kcclogo.webp" alt="KCC Logo" class="w-44 mb-4">
             </div>
-            <div class="flex flex-col md:flex-row justify-between md:text-left">
-                <div class="mb-8 md:mb-0">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:text-left">
+                <div class="w-fit">
                     <h3 class="text-xl font-semibold mb-4">Follow Us</h3>
-                    <a href="https://www.instagram.com/kerala_campus_ministry" class="block mb-2">Instagram</a>
-                    <a href="https://youtube.com/@keralacampusministryjesusyouth" class="block mb-2">YouTube</a>
+                    <a href="https://www.instagram.com/kerala_campus_ministry"
+                        class="flex items-center gap-2 justify-center md:justify-start mb-2">
+                        <i class="fi fi-brands-instagram"></i>
+                        Instagram
+                    </a>
+                    <a href="https://youtube.com/@keralacampusministryjesusyouth"
+                        class="flex items-center gap-2 justify-center md:justify-start mb-2">
+                        <i class="fi fi-brands-youtube"></i> YouTube
+                    </a>
                     <a href="https://www.facebook.com/keralacampusministry?mibextid=ZbWKwL"
-                        class="block mb-2">Facebook</a>
+                        class="flex items-center gap-2 justify-center md:justify-start mb-2">
+                        <i class="fi fi-brands-facebook"></i>
+                        Facebook
+                    </a>
                 </div>
-                <div class="mb-8 md:mb-0">
+                <div>
                     <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
                     <p class="mb-2 font-thin"><strong>George Joseph</strong> - Kerala CCT Coordinator</p>
-                    <p class="mb-2"><a href="tel:+919496673675" class="">9496673675</a></p>
-                    <p class="mb-2"><strong>Don Benny</strong> - KCC General Coordinator</p>
-                    <p class="mb-2"><a href="tel:+918848762429" class="">8848762429</a></p>
-                    <p class="mb-2"><strong>Alwin Thomas</strong> - KCC Mobilization Coordinator</p>
-                    <p class="mb-2"><a href="tel:+918606721186" class="">8606721186</a></p>
+                    <p class="mb-2 font-thin"><a href="tel:+919496673675"
+                            class="text-yellow-500 hover:underline">9496673675</a>
+                    </p>
+                    <p class="mb-2 font-thin"><strong>Don Benny</strong> - KCC General Coordinator</p>
+                    <p class="mb-2 font-thin"><a href="tel:+918848762429"
+                            class="text-yellow-500 hover:underline">8848762429</a>
+                    </p>
+                    <p class="mb-2 font-thin"><strong>Alwin Thomas</strong> - KCC Mobilization Coordinator</p>
+                    <p class="mb-2 font-thin"><a href="tel:+918606721186"
+                            class="text-yellow-500 hover:underline">8606721186</a>
+                    </p>
                 </div>
-                <div class="mb-8 md:mb-0">
+                <div class="w-fit text-left">
                     <h3 class="text-xl font-semibold mb-4">Download App</h3>
-                    <a href="https://testflight.apple.com/join/b8eIbxEV" class="block mb-2">iOS</a>
-                    <a href="https://appdistribution.firebase.dev/i/afcf37cae0f8ab1d" class="block mb-2">Android</a>
+                    <a href="https://testflight.apple.com/join/b8eIbxEV"
+                        class="flex items-center justify-center md:justify-start mb-2 w-fit">
+                        <img src="./assets/apple.webp" alt="iOS" class="w-5 h-5 mr-2">
+                        iOS
+                    </a>
+                    <a href="https://appdistribution.firebase.dev/i/afcf37cae0f8ab1d"
+                        class="flex items-center justify-center md:justify-start mb-2 w-fit">
+                        <img src="./assets/android.webp" alt="Android" class="w-5 h-5 mr-2">
+                        Android
+                    </a>
                 </div>
             </div>
-            <img src="./assets/logo.webp" alt="KCC Logo" class="m-auto mb-2 w-8 h-auto">
-            <p class="mt-4 text-sm text-center">Copyright © 2024 KCC24 - All Rights Reserved</p>
+            <div class="mt-8 text-center">
+                <img src="./assets/logo.webp" alt="KCC Logo" class="m-auto mb-2 w-8 h-auto">
+                <p class="mt-4 text-sm">&copy; 2024 KCC24 - All Rights Reserved</p>
+            </div>
+        </div>
     </footer>
+
 
 
     <!-- Modal -->
