@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'NovithaScriptDemo';
+
+        src: url('./fonts/novitha_script/NovithaScriptDemo2.woff2') format('woff2');
+    }
+}
+
+@layer utilities {
+    body {
+        font-family: "Red Hat Display", sans-serif;
+        font-optical-sizing: auto;
+    }
+
+    .fontNovitha {
+        font-family: "Novitha ScriptDemo";
+        font-size: 6rem;
+    }
+
+    .tiltedr {
+        transform: rotate(2deg);
+    }
+
+    .tiltedl {
+        transform: rotate(-2deg);
+    }
+
+    .tiltedl-xl {
+        transform: rotate(-8deg);
+    }
+}
