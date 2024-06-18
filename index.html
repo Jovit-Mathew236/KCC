@@ -196,35 +196,40 @@
 
 
     <!-- Header Section -->
-    <header class="bg-cover bg-center h-screen" style="background-image: url('./assets/hero1.webp');">
+    <header class="bg-cover bg-center h-screen bg-fixed" style="background-image: url('./assets/hero1.webp');">
         <div class="bg-black bg-opacity-50 h-full flex justify-center">
             <div class="absolute bottom-10 flex flex-col justify-end items-center md:static md:justify-center delay-[100ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
                 data-taos-offset="0">
+                <span class="animate-ping absolute inline-flex h-[200px] w-[200px] rounded-full bg-sky-500 opacity-25">
+                </span>
                 <img src="./assets/kcclogo.webp" class="object-cover mb-4 w-56 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
                     alt="KCC Logo">
                 <h1 class="text-4xl text-center font-bold text-white mb-3">Kerala Campus Conference 2024</h1>
-                <p class="text-xs mb-3">
+                <p class="text-xs mb-3 ">
                     <span class="bg-red-500 px-2">PROCLAIM</span><span class="bg-sky-500 px-2">FROM</span><span
                         class="bg-yellow-500 px-2">THE</span><span class="bg-emerald-400 px-2">ROOFTOPS</span>
                 </p>
                 <p class="text-lg text-center text-white mb-2">August 23 - 26</p>
                 <p class="text-lg text-center text-white mb-6">Rajagiri Campus, Kalamassery</p>
                 <div class="mt-4 flex gap-4">
+
                     <a href="#about" class="bg-transparent text-white px-4 py-2 border border-white rounded-full">View
                         Detail</a>
                     <!-- <a href="./assets/docs/KCC THEME DOC.pdf" download="KCC THEME DOC.pdf"
                         class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full ml-4">Download
                         Theme</a> -->
-                    <p onclick="showModalTheme()" class="bg-yellow-500 text-black font-bold px-4 py-2 rounded-full">
+                    <p onclick="showModalTheme()" class=" a bg-yellow-500 text-black font-bold px-4 py-2 rounded-full">
                         Download
-                        Theme</p>
+                        Theme
+                    </p>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-12 px-6 delay-[100ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
+    <section id="about"
+        class="animate-ease-in py-12 px-6 delay-[100ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
         data-taos-offset="300">
         <div class="md:w-[600px] m-auto mb-16">
             <h2 class="text-3xl font-bold mb-4">What is KCC?</h2>
@@ -308,6 +313,9 @@
     <section class="py-12 px-6 ">
         <div class="relative flex justify-center delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
             data-taos-offset="100">
+            <span
+                class="animate-ping absolute inline-flex h-[200px] w-[200px] rounded-full bg-yellow-500 opacity-25 z-0">
+            </span>
             <h2 class="mb-8 text-center leading-10 z-1 fontNovitha">Events</h2>
             <h1 class="m-auto text-[80px] -top-5 font-black z-0 opacity-10 absolute leading-10">EVENTS</h1>
         </div>
@@ -522,7 +530,10 @@
             <div class="timer delay-[100ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(1.2)] taos:opacity-0"
                 data-taos-offset="50">
                 <div
-                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    class="relative rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-[60px] w-[60px] rounded-md md:rounded-full bg-yellow-500 opacity-25 z-0">
+                    </span>
                     <h3 class="countdown-element days font-manrope font-semibold text-2xl text-white text-center">
                     </h3>
                     <p class="text-lg uppercase font-normal text-white mt-1 text-center w-full">days</p>
@@ -532,7 +543,10 @@
             <div class="timer delay-[100ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(1.2)] taos:opacity-0"
                 data-taos-offset="100">
                 <div
-                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    class="relative rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-[60px] w-[60px] rounded-md md:rounded-full bg-sky-500 opacity-25 z-0">
+                    </span>
                     <h3 class="countdown-element hours font-manrope font-semibold text-2xl text-white text-center">
                     </h3>
                     <p class="text-lg uppercase font-normal text-white mt-1 text-center w-full">Hour</p>
@@ -542,7 +556,10 @@
             <div class="timer delay-[100ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(1.2)] taos:opacity-0"
                 data-taos-offset="150">
                 <div
-                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    class="relative rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-[60px] w-[60px] rounded-md md:rounded-full bg-yellow-500 opacity-25 z-0">
+                    </span>
                     <h3 class="countdown-element minutes font-manrope font-semibold text-2xl text-white text-center">
                     </h3>
                     <p class="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">Minutes</p>
@@ -552,7 +569,10 @@
             <div class="timer delay-[100ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(1.2)] taos:opacity-0"
                 data-taos-offset="200">
                 <div
-                    class="rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    class="relative rounded-xl bg-black/25 backdrop-blur-sm py-3 min-w-[86px] md:min-w-[186px] md:h-[200px] flex items-center justify-center flex-col gap-1 px-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-[60px] w-[60px] rounded-md md:rounded-full bg-sky-500 opacity-25 z-0">
+                    </span>
                     <h3 class="countdown-element seconds font-manrope font-semibold text-2xl text-white text-center">
                     </h3>
                     <p class="text-lg fo uppercasent-normal text-white mt-1 text-center w-full">Seconds</p>
@@ -621,6 +641,7 @@
             </div>
         </div>
     </footer>
+
 
 
 
