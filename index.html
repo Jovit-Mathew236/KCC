@@ -198,10 +198,10 @@
     <!-- Header Section -->
     <header class="bg-cover bg-center h-screen bg-fixed" style="background-image: url('./assets/hero1.webp');">
         <div class="bg-black bg-opacity-50 h-full flex justify-center">
-            <div class="absolute bottom-10 flex flex-col justify-end items-center md:static md:justify-center delay-[100ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
+            <div class="absolute bottom-10 flex flex-col justify-end items-center md:static md:justify-center overflow-hidden delay-[100ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
                 data-taos-offset="0">
-                <!-- <span class="animate-ping absolute inline-flex h-[200px] w-[200px] rounded-full bg-sky-500 opacity-25">
-                </span> -->
+                <span class="animate-ping absolute inline-flex h-[200px] w-[200px] rounded-full bg-sky-500 opacity-25">
+                </span>
                 <img src="./assets/kcclogo.webp" class="object-cover mb-4 w-56 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
                     alt="KCC Logo">
                 <h1 class="text-4xl text-center font-bold text-white mb-3">Kerala Campus Conference 2024</h1>
@@ -310,12 +310,12 @@
 
 
     <!-- Event Section -->
-    <section class="py-12 px-6 ">
+    <section class="py-12 px-6 overflow-hidden">
         <div class="relative flex justify-center delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
             data-taos-offset="100">
-            <!-- <span
+            <span
                 class="animate-ping absolute inline-flex h-[190px] w-[190px] rounded-full bg-yellow-500 opacity-25 z-0">
-            </span> -->
+            </span>
             <h2 class="mb-8 text-center leading-10 z-1 fontNovitha">Events</h2>
             <h1 class="m-auto text-[80px] -top-5 font-black z-0 opacity-10 absolute leading-10">EVENTS</h1>
         </div>
@@ -524,7 +524,8 @@
     </section>
 
 
-    <div class="w-full h-96 rounded-2xl flex gap-9 flex-col items-center justify-center bg-cover bg-center">
+    <div
+        class="w-full h-96 rounded-2xl flex gap-9 flex-col items-center justify-center bg-cover bg-center overflow-hidden">
         <div class="flex items-start justify-center w-full gap-1.5 count-down-main">
 
             <div class="timer delay-[100ms] duration-[600ms] taos:[transform:translate3d(0,200px,0)_scale(1.2)] taos:opacity-0"
