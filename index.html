@@ -165,7 +165,6 @@
             }
             .fontNovitha{
                 font-family: "NovithaScriptDemo";
-                font-size: 6rem;
             }
             .tiltedr {
                 transform: rotate(2deg);
@@ -175,6 +174,9 @@
             }
             .tiltedl-xl {
                 transform: rotate(-8deg);
+            }
+            .thumbnail-image.active {
+                border: 2px solid #333; /* Example border styling */
             }
         }
     </style>
@@ -587,6 +589,49 @@
     </div>
 
 
+
+    <!-- Feature Events -->
+
+    <div class="w-11/12 lg:w-[700px] m-auto mb-20">
+        <div class="relative flex justify-center delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            data-taos-offset="100">
+            <h2 class="mb-5 text-center text-[70px] leading-10 z-1 fontNovitha">Up Coming Events</h2>
+            <h1 class="m-auto text-[35px] md:text-[70px] -top-5 font-black z-0 opacity-10 absolute leading-10">FUTURE
+                EVENTS</h1>
+        </div>
+        <p class="font-thin text-center mb-6 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            data-taos-offset="100">The future events are here!</p>
+        <div class="grid gap-4 mt-2">
+            <div id="main-image" class=" lg:w-[700px]">
+                <img class="h-[250px] object-cover w-full md:h-full md:w-full md:object-cover rounded-lg"
+                    src="./assets/kcc2.webp" alt="">
+            </div>
+            <div class="grid grid-cols-5 gap-4 h-[85px]" id="thumbnail-carousel">
+                <div class="md:h-full">
+                    <img class="md:object-cover h-auto md:h-full max-w-full rounded-lg thumbnail-image"
+                        src="./assets/kcc3.webp" alt="">
+                </div>
+                <div class="md:h-full">
+                    <img class="md:object-cover h-auto md:h-full max-w-full rounded-lg thumbnail-image"
+                        src="./assets/kcc4.webp" alt="">
+                </div>
+                <div class="md:h-full">
+                    <img class="md:object-cover h-auto md:h-full max-w-full rounded-lg thumbnail-image"
+                        src="./assets/kcc5.webp" alt="">
+                </div>
+                <div class="md:h-full">
+                    <img class="md:object-cover h-auto md:h-full max-w-full rounded-lg thumbnail-image"
+                        src="./assets/kcc195.webp" alt="">
+                </div>
+                <div class="md:h-full">
+                    <img class="md:object-cover h-auto md:h-full max-w-full rounded-lg thumbnail-image"
+                        src="./assets/kcc6.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Footer Section -->
     <footer class="py-10 bg-slate-950 bg-opacity-30 backdrop-blur-md text-white">
         <div class="container mx-auto px-6 md:px-12 lg:px-24">
@@ -717,6 +762,44 @@
         function hideModalTheme() {
             document.getElementById('modalTheme').classList.add('hidden');
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainImage = document.getElementById('main-image').querySelector('img');
+            const thumbnails = document.querySelectorAll('.thumbnail-image');
+            const intervalTime = 10000; // Time in milliseconds between transitions
+            let currentIndex = 0;
+
+            // Function to show the image at a given index
+            function showImage(index) {
+                // Update main image src with the corresponding thumbnail src
+                mainImage.src = thumbnails[index].src;
+                // Highlight the active thumbnail
+                thumbnails.forEach((thumb) => thumb.classList.remove('active'));
+                thumbnails[index].classList.add('active');
+            }
+
+            // Function to switch to the next image
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % thumbnails.length;
+                showImage(currentIndex);
+            }
+
+            // Automatically switch images at intervals
+            setInterval(nextImage, intervalTime);
+
+            // Initial image display
+            showImage(currentIndex);
+
+            // Click event listeners for thumbnails
+            thumbnails.forEach((thumbnail, index) => {
+                thumbnail.addEventListener('click', () => {
+                    currentIndex = index;
+                    showImage(currentIndex);
+                });
+            });
+        });
+
+
     </script>
 
     <script>
