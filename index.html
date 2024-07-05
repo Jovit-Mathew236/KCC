@@ -42,7 +42,7 @@
     <link rel="prefetch"
         href="https://db.onlinewebfonts.com/c/83cafa6099ebd5cf8a6af2cc23818fca?family=Novitha+ScriptDemo"
         rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="https://kcc24.live/assets/kcclogo48.png" type="image/png">
     <link rel="icon" href="https://kcc24.live/assets/kcclogo48.png" type="image/png">
     <!-- <link rel="icon" href="https://kcc24.live/assets/kcclogoo.ico"> -->
@@ -80,7 +80,8 @@
     <meta name="google-site-verification" content="FD8caxnx0zUzRFgtOk1O_cZ_UShPj3WxN3-cLQVBpO0" />
 
 
-    <script type="application/ld+json">
+
+    <script <script type="application/ld+json">
         {
           "@context": "https://schema.org",
           "@type": "Event",
@@ -156,10 +157,14 @@
               font-family: 'NovithaScriptDemo';
               src: url('./fonts/novitha_script/NovithaScriptDemo2.woff2') format('woff2');
             }
+            @font-face {
+              font-family: 'DegularVariable';
+              src: url('./fonts/Degular_font/DegularVariable.woff2') format('woff2');
+            }
           }
         @layer utilities {
             body {
-                font-family: "Red Hat Display", sans-serif;
+                font-family: "DegularVariable", sans-serif;
                 font-optical-sizing: auto;
             }
             .fontNovitha{
@@ -206,12 +211,13 @@
                 <img src="./assets/kcclogo.webp" class="object-cover mb-4 w-56 drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
                     alt="KCC Logo">
                 <h1 class="text-4xl text-center font-bold text-white mb-3">Kerala Campus Conference 2024</h1>
-                <p class="text-xs mb-3 ">
+                <!-- <p class="text-xs mb-3 ">
                     <span class="bg-red-500 px-2">PROCLAIM</span><span class="bg-sky-500 px-2">FROM</span><span
                         class="bg-yellow-500 px-2">THE</span><span class="bg-emerald-400 px-2">ROOFTOPS</span>
-                </p>
-                <p class="text-lg text-center text-white mb-2">August 23 - 26</p>
-                <p class="text-lg text-center text-white mb-6">Rajagiri Campus, Kalamassery</p>
+                </p> -->
+                <img src="./assets/PFTR.png" class="object-cover mb-4 w-56 " alt="PFTR">
+                <!-- <p class="text-lg text-center text-white mb-2">August 23 - 26</p> -->
+                <p class="text-lg text-center text-white mb-6">Rajagiri Campus, Kalamassery | August 23 - 26</p>
                 <div class="mt-4 flex gap-4">
 
                     <a href="#about" class="bg-transparent text-white px-4 py-2 border border-white rounded-full">View
@@ -234,9 +240,9 @@
         data-taos-offset="300">
         <div class="md:w-[600px] m-auto mb-16">
             <h2 class="text-3xl font-bold mb-4">What is KCC?</h2>
-            <p class="mb-6">The Kerala Campus Conference is a distinguished event initiated by the Jesus Youth
-                Kerala Campus
-                Ministry. It aims to unite active campus ministers from across Kerala.</p>
+            <p class="mb-6">The Kerala Campus Conference is a much-anticipated gathering of campus ministers initiated
+                by the Jesus Youth Kerala Campus Ministry. As a vibrant ministry of young people, we aim to bring the
+                message of Christ to the academic world.</p>
         </div>
         <div class="space-y-12 md:w-[500px] md:m-auto">
             <div class="relative bg-blue-500 p-6 rounded-[20px] tiltedr text-center delay-[100ms] duration-[900ms] taos:translate-y-[100px] taos:opacity-0"
@@ -244,19 +250,16 @@
                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <img src="./assets/aboutarrow.webp" alt="Icon" class="w-12 h-12 rounded-full">
                 </div>
-                <p class="mt-4 font-semibold">Provides leaders with enhanced clarity regarding the ministry's current
-                    activities and
-                    focuses.
-                    Effectively communicates the ministry's vision to grass root levels.</p>
+                <p class="mt-4 font-semibold">Provides leaders with enhanced clarity about the ministry's current
+                    activities and priorities. Effectively communicates the ministry's vision to grassroots levels.</p>
             </div>
             <div class="relative bg-green-500 p-6 rounded-[20px] tiltedl text-center delay-[300ms] duration-[600ms] taos:translate-y-[100px] taos:opacity-0"
                 data-taos-offset="200">
                 <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <img src="./assets/aboutdp.webp" alt="Icon" class="w-12 h-12 rounded-full">
                 </div>
-                <p class="mt-4 font-semibold">Hundreds of young leaders who share their experiences in building the
-                    kingdom of God on
-                    campuses.</p>
+                <p class="mt-4 font-semibold">A collective of hundreds of young leaders sharing their experiences in
+                    building the kingdom of God on campuses.</p>
             </div>
             <div class="relative bg-yellow-500 p-6 rounded-[20px] text-center delay-[100ms] duration-[600ms] taos:translate-y-[50px] taos:opacity-0"
                 data-taos-offset="200">
@@ -264,8 +267,7 @@
                     <img src="./assets/aboutstar.webp" alt="Icon" class="w-12 h-12 rounded-full">
                 </div>
                 <p class="mt-4 font-semibold">Serves as a vital platform for igniting the spirit of evangelization in
-                    the leadership
-                    for the years to come.</p>
+                    leadership for the years to come.</p>
             </div>
         </div>
     </section>
@@ -277,8 +279,9 @@
             <h2 class="mb-8 text-center leading-10 z-1 fontNovitha">Theme</h2>
             <h1 class="m-auto text-[80px] -top-5 font-black z-0 opacity-10 absolute leading-10">THEME</h1>
         </div>
-        <p class="font-thin text-center mb-6 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
-            data-taos-offset="100">Proclaim from the rooftops</p>
+        <p class="font-thin max-w-80 m-auto text-center mb-6 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            data-taos-offset="100">What I tell you in the dark, speak in the daylight; what is whispered in your ear,
+            proclaim from the rooftops.</p>
         <div class="space-y-4 flex flex-col items-center">
             <div class="theme-block flex items-center md:w-[640px] md:justify-between gap-6 delay-[300ms] duration-[600ms] taos:translate-y-[200px] taos:opacity-0"
                 data-taos-offset="100">
@@ -301,8 +304,10 @@
                 data-taos-offset="100">
                 <div class="theme-content mt-8">
                     <p class="font-bold bg-green-500 w-fit px-2">#celebrate</p>
-                    <p class="text-sm mt-4">To celebrate faith in campus is to rejoice in the richness of the Catholic
-                        journey.</p>
+                    <p class="text-sm mt-4">To celebrate faith on campus is to rejoice in the richness of the Catholic
+                        journey.
+                        To celebrate faith is to rejoice in the richness of the Catholic journey.
+                    </p>
                 </div>
                 <img src="./assets/themecelibrates.webp" class="h-48" alt="Profess Image">
             </div>
@@ -375,12 +380,7 @@
                                 class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="event-image7">
                         </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc198.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image8">
-                        </div>
+
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
                             <img src="./assets/kcc199.webp"
@@ -427,6 +427,64 @@
         <div class="relative mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[242px]"></div>
 
     </section>
+
+
+
+    <!-- Registration details -->
+    <section class="py-12 px-6 overflow-x-hidden">
+        <div class="relative flex justify-center delay-[100ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            data-taos-offset="100">
+            <h2 class="mb-8 text-center leading-10 z-1 fontNovitha">Registration</h2>
+            <h1 class="m-auto text-[80px] -top-5 font-black z-0 opacity-10 absolute leading-10">REGISTRATION</h1>
+        </div>
+        <p class="font-thin text-center mb-6 delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
+            data-taos-offset="100">Counting</p>
+
+        <div class="flex gap-3 w-fit my-2 mx-auto">
+            <select id="district-select"
+                class="m-auto md:w-56 block px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 bg-opacity-30 backdrop-blur-md focus:ring-blue-500 focus:border-blue-500 dark:backdrop-blur-md dark:bg-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a District</option>
+            </select>
+            <!-- <select id="college-select"
+                class="m-auto md:w-56 block px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 bg-opacity-30 backdrop-blur-md focus:ring-blue-500 focus:border-blue-500 dark:backdrop-blur-md dark:bg-gray-800 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a College</option>
+            </select> -->
+        </div>
+
+
+        <div
+            class="m-auto max-w-sm md:max-w-lg w-full bg-white bg-opacity-30 backdrop-blur-md rounded-lg shadow dark:bg-opacity-30 dark:backdrop-blur-md dark:bg-gray-800 p-4 md:p-6">
+            <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+                <div class="flex items-center">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center me-3">
+                        <svg class="w-6 h-6 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 19">
+                            <path
+                                d="M14.5 0A3.987 3.987 0 0 0 11 2.1a4.977 4.977 0 0 1 3.9 5.858A3.989 3.989 0 0 0 14.5 0ZM9 13h2a4 4 0 0 1 4 4v2H5v-2a4 4 0 0 1 4-4Z" />
+                            <path
+                                d="M5 19h10v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2ZM5 7a5.008 5.008 0 0 1 4-4.9 3.988 3.988 0 1 0-3.9 5.859A4.974 4.974 0 0 1 5 7Zm5 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm5-1h-.424a5.016 5.016 0 0 1-1.942 2.232A6.007 6.007 0 0 1 17 17h2a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5ZM5.424 9H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h2a6.007 6.007 0 0 1 4.366-5.768A5.016 5.016 0 0 1 5.424 9Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h5 id="totalRegistration"
+                            class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">3.4k</h5>
+                        <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Realtime registration count KCC
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="column-chart">
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
 
     <!-- Registration Section -->
     <section class="py-12 px-6">
@@ -699,6 +757,9 @@
 
 
     <script rel="prefetch" src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script type="module" src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/pagedone@1.1.2/src/js/pagedone.js"></script> -->
     <script>
