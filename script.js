@@ -165,6 +165,7 @@ document
 
 // Initial load
 fetchDistrictData().then((districtData) => {
+  updateDistrictSelect(districtData);
   const chartData = Object.entries(districtData).map(([key, value]) => ({
     x: key,
     y: value,
