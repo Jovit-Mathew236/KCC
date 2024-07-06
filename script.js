@@ -150,7 +150,7 @@ document
   .addEventListener("change", async (event) => {
     const district = event.target.value;
     const collegeData = await fetchCollegeData(district);
-    updateCollegeSelect(collegeData);
+    // updateCollegeSelect(collegeData);
 
     const chartData = Object.entries(collegeData).map(([key, value]) => ({
       x: key,
@@ -161,6 +161,7 @@ document
       0
     );
     updateChart(chartData, totalRegistration);
+    // console.log(chartData, totalRegistration);
   });
 
 // Initial load
