@@ -1,3 +1,5 @@
+let chart;
+
 async function fetchDistrictData() {
   try {
     const response = await fetch(
@@ -6,8 +8,8 @@ async function fetchDistrictData() {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const DistrictData = await response.json();
-    return DistrictData;
+    const districtData = await response.json();
+    return districtData;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -21,8 +23,8 @@ async function fetchCollegeData(district) {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const CollegeData = await response.json();
-    return CollegeData;
+    const collegeData = await response.json();
+    return collegeData;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -30,7 +32,7 @@ async function fetchCollegeData(district) {
 
 function updateDistrictSelect(districtData) {
   const districtSelect = document.getElementById("district-select");
-  districtSelect.innerHTML = "<option selected>Choose a District</option>";
+  districtSelect.innerHTML = "<option selected>Choose a Zone</option>";
   Object.keys(districtData).forEach((district) => {
     const option = document.createElement("option");
     option.value = district;
@@ -38,17 +40,6 @@ function updateDistrictSelect(districtData) {
     districtSelect.appendChild(option);
   });
 }
-
-// function updateCollegeSelect(collegeData) {
-//   const collegeSelect = document.getElementById("college-select");
-//   collegeSelect.innerHTML = "<option selected>Choose a College</option>";
-//   Object.keys(collegeData).forEach((college) => {
-//     const option = document.createElement("option");
-//     option.value = college;
-//     option.text = college;
-//     collegeSelect.appendChild(option);
-//   });
-// }
 
 function updateChart(chartData, totalRegistration) {
   const options = {
@@ -135,10 +126,11 @@ function updateChart(chartData, totalRegistration) {
     },
   };
 
-  const chart = new ApexCharts(
-    document.getElementById("column-chart"),
-    options
-  );
+  if (chart) {
+    chart.destroy();
+  }
+
+  chart = new ApexCharts(document.getElementById("column-chart"), options);
   chart.render();
 
   document.getElementById("totalRegistration").textContent =
@@ -150,7 +142,6 @@ document
   .addEventListener("change", async (event) => {
     const district = event.target.value;
     const collegeData = await fetchCollegeData(district);
-    // updateCollegeSelect(collegeData);
 
     const chartData = Object.entries(collegeData).map(([key, value]) => ({
       x: key,
@@ -161,7 +152,7 @@ document
       0
     );
     updateChart(chartData, totalRegistration);
-    // console.log(chartData, totalRegistration);
+    console.log(chartData, totalRegistration);
   });
 
 // Initial load
