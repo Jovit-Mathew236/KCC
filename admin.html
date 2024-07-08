@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCC | Admin Dashboard</title>
+    <script type="module" src="/admin-script.js"></script>
+    <link rel="prefetch"
+        href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="https://kcc24.live/assets/kcclogo48.png" type="image/png">
+    <link rel="icon" href="https://kcc24.live/assets/kcclogo48.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/tailwindcss">
+        @layer base {
+            @font-face {
+                font-family: 'NovithaScriptDemo';
+                src: url('./fonts/novitha_script/NovithaScriptDemo2.woff2') format('woff2');
+            }
+
+            @font-face {
+                font-family: 'DegularVariable';
+                src: url('./fonts/Degular_font/DegularVariable.woff2') format('woff2');
+            }
+        }
+
+        @layer utilities {
+            body {
+                font-family: "DegularVariable", sans-serif;
+                font-optical-sizing: auto;
+            }
+
+            .fontNovitha {
+                font-family: "NovithaScriptDemo";
+                font-size: 6rem;
+            }
+
+            .btn {
+                background-color: #E3223B;
+                color: white;
+            }
+
+            .btn:hover {
+                background-color: #C21A33;
+            }
+
+            .delete-btn {
+                background-color: #FDB514;
+            }
+
+            .delete-btn:hover {
+                background-color: #E0A50F;
+            }
+
+            .card {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 16px;
+                margin-bottom: 24px;
+            }
+
+            .image-preview {
+                position: relative;
+            }
+
+            .image-preview img {
+                border-radius: 8px;
+            }
+
+            .image-preview button {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white bg-cover" style="background-image: url('./assets/bg.webp');">
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-[#E3223B]">Admin Dashboard</h1>
+            <button onclick="signOut()" class="btn px-4 py-2 rounded">Sign Out</button>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-6 flex flex-col gap-4">
+        <h2 class="text-2xl font-bold mb-6 text-[#E3223B]">Admin Dashboard</h2>
+
+        <div class="flex flex-col gap-2 sm:flex-row">
+            <div
+                class="border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 bg-opacity-70 backdrop-blur-md border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                <h3 class="text-xl font-semibold mb-2 ">Upload Upcoming Event Image</h3>
+
+                <div class="flex items-center justify-center w-full">
+                    <label for="upcomingImageUpload"
+                        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <svg class="w-8 h-8 mb-4 text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Click to
+                                    upload</span> or drag and drop</p>
+                            <p class="text-xs text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                        </div>
+                        <input id="upcomingImageUpload" type="file" class="hidden" onchange="previewImages('upcoming')"
+                            multiple />
+                    </label>
+                </div>
+                <div id="upcomingImagePreview" class="mt-4 w-full flex flex-wrap"></div>
+                <button onclick="uploadImage('upcoming')" class="btn px-4 py-2 rounded mt-4">Upload</button>
+            </div>
+
+            <div
+                class="border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 bg-opacity-70 backdrop-blur-md border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                <h3 class="text-xl font-semibold mb-2 ">Upload Ongoing Event Image</h3>
+                <div class="flex items-center justify-center w-full">
+                    <label for="ongoingImageUpload"
+                        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click
+                                    to
+                                    upload</span> or drag and drop</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)
+                            </p>
+                        </div>
+                        <input id="ongoingImageUpload" type="file" class="hidden" onchange="previewImages('ongoing')"
+                            multiple />
+                    </label>
+                </div>
+                <div id="ongoingImagePreview" class="mt-4"></div>
+                <button onclick="uploadImage('ongoing')" class="btn px-4 py-2 rounded mt-4">Upload</button>
+            </div>
+        </div>
+
+        <div
+            class="border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 bg-opacity-70 backdrop-blur-md border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+            <h3 class="text-xl font-semibold mb-2">Upcoming Events</h3>
+            <div id="upcomingEvents" class="image-preview flex flex-wrap"></div>
+        </div>
+
+        <div
+            class=" border text-sm rounded-lg  block w-full p-2.5 bg-gray-700 bg-opacity-70 backdrop-blur-md border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+            <h3 class="text-xl font-semibold mb-2 ">Ongoing Events</h3>
+            <div id="ongoingEvents" class="image-preview flex flex-wrap"></div>
+        </div>
+    </div>
+
+    <script rel="prefetch" src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>

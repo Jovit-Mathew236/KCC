@@ -168,3 +168,98 @@ fetchDistrictData().then((districtData) => {
   );
   updateChart(chartData, totalRegistration);
 });
+
+// firebase functions
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCycFbzihXVBYAbeVWwbNGlm7fFGeOicb8",
+  authDomain: "kcc24-277a5.firebaseapp.com",
+  projectId: "kcc24-277a5",
+  storageBucket: "kcc24-277a5.appspot.com",
+  messagingSenderId: "980169847772",
+  appId: "1:980169847772:web:a22c48a18a068014859519",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let currentSlide = 0;
+let slides = [];
+
+function loadImages() {
+  const container = document.getElementById("ongoingEventsWeb");
+  container.innerHTML = "";
+
+  getDocs(collection(db, "images")).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      const div = document.createElement("div");
+      div.classList.add(
+        "hidden",
+        "duration-700",
+        "ease-in-out",
+        "absolute",
+        "inset-0"
+      );
+
+      const img = document.createElement("img");
+      img.src = data.url;
+      img.classList.add(
+        "absolute",
+        "object-cover",
+        "object-center",
+        "block",
+        "w-full",
+        "h-full"
+      );
+
+      div.appendChild(img);
+      container.appendChild(div);
+      slides.push(div);
+    });
+
+    if (slides.length > 0) {
+      showSlide(0);
+      setupEventListeners();
+    }
+  });
+}
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.remove("hidden");
+    } else {
+      slide.classList.add("hidden");
+    }
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+function setupEventListeners() {
+  const nextButton = document.getElementById("nextButton");
+  const prevButton = document.getElementById("prevButton");
+
+  if (nextButton) nextButton.addEventListener("click", nextSlide);
+  if (prevButton) prevButton.addEventListener("click", prevSlide);
+
+  // Optional: Auto-advance slides every 5 seconds
+  setInterval(nextSlide, 5000);
+}
+
+window.onload = loadImages();

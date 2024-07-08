@@ -335,62 +335,11 @@
             <div class="rounded-xl overflow-hidden h-[240px] md:h-[362px] delay-[300ms] duration-[600ms] taos:scale-[0.6] taos:opacity-0"
                 data-taos-offset="100">
 
-                <div id="gallery" class="relative w-full h-[240px] md:h-[362px] rounded-xl" data-carousel="slide">
-                    <!-- Carousel wrapper -->
-                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc192.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image1">
-                        </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc193.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image2">
-                        </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc1914.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image3">
-                        </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc1910.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image4">
-                        </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc1911.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image5">
-                        </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc195.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image6">
-                        </div>
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc197.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image7">
-                        </div>
-
-                        <!-- Item 1 -->
-                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="./assets/kcc199.webp"
-                                class="absolute object-cover object-center block max-w-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                                alt="event-image9">
-                        </div>
-
+                <div id="gallery" class="relative w-full h-[240px] md:h-[362px] rounded-xl">
+                    <div id="ongoingEventsWeb" class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                        <!-- Images will be inserted here -->
                     </div>
-                    <!-- Slider controls -->
-                    <button type="button"
+                    <button type="button" id="prevButton"
                         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                         data-carousel-prev>
                         <span
@@ -403,7 +352,7 @@
                             <span class="sr-only">Previous</span>
                         </span>
                     </button>
-                    <button type="button"
+                    <button type="button" id="nextButton"
                         class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
                         data-carousel-next>
                         <span
