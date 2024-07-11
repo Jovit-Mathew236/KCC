@@ -193,8 +193,8 @@ let currentSlide = 0;
 let slides = [];
 
 function loadImages() {
-  const container = document.getElementById("ongoingEventsWeb");
-  container.innerHTML = "";
+  const containerOngoing = document.getElementById("ongoingEventsWeb");
+  containerOngoing.innerHTML = "";
 
   getDocs(collection(db, "images")).then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -220,7 +220,12 @@ function loadImages() {
       );
 
       div.appendChild(img);
-      container.appendChild(div);
+      if (data.eventType === "upcoming") {
+        null;
+      } else {
+        containerOngoing.appendChild(div);
+      }
+      // containerOngoing.appendChild(div);
       slides.push(div);
     });
 

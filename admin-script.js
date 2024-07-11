@@ -123,8 +123,11 @@ function loadImages() {
         "absolute",
         "top-1",
         "right-1",
-        "rounded",
-        "text-white"
+        "rounded-bl",
+        "text-white",
+        "bg-gray-700",
+        "bg-opacity-70",
+        "backdrop-blur-md"
       );
       deleteButton.onclick = function () {
         deleteImage(doc.id, data.url);
