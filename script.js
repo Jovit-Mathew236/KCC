@@ -106,6 +106,7 @@ function updateChart(chartData, totalRegistration) {
       floating: false,
       labels: {
         show: true,
+        rotate: -90,
         style: {
           fontFamily: "Inter, sans-serif",
           cssClass: "text-xs font-normal fill-gray-500 dark:fill-gray-400",
