@@ -195,7 +195,14 @@ let slides = [];
 
 function loadImages() {
   const containerOngoing = document.getElementById("ongoingEventsWeb");
+  const containerUpcoming = document.getElementById("upComingEventsWeb");
+  const thumbnailCarousel = document.getElementById("thumbnail-carousel");
   containerOngoing.innerHTML = "";
+  containerUpcoming.innerHTML = "";
+  thumbnailCarousel.innerHTML = "";
+
+  let slides = [];
+  let currentSlide = 0;
 
   getDocs(collection(db, "images")).then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -222,7 +229,37 @@ function loadImages() {
 
       div.appendChild(img);
       if (data.eventType === "upcoming") {
-        null;
+        const img = document.createElement("img");
+        img.src = data.url;
+        img.classList.add(
+          "h-[250px]",
+          "object-cover",
+          "w-full",
+          "md:h-full",
+          "md:w-full",
+          "md:object-cover",
+          "rounded-lg"
+        );
+        img.alt = data.alt || "";
+
+        slides.push(img);
+
+        // Create thumbnail
+        const thumbnailDiv = document.createElement("div");
+        thumbnailDiv.classList.add("md:h-full");
+        const thumbnailImg = document.createElement("img");
+        thumbnailImg.src = data.url;
+        thumbnailImg.classList.add(
+          "md:object-cover",
+          "h-auto",
+          "md:h-full",
+          "max-w-full",
+          "rounded-lg",
+          "thumbnail-image"
+        );
+        thumbnailImg.alt = data.alt || "";
+        thumbnailDiv.appendChild(thumbnailImg);
+        thumbnailCarousel.appendChild(thumbnailDiv);
       } else {
         containerOngoing.appendChild(div);
       }
