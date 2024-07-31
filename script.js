@@ -197,9 +197,9 @@ function loadImages() {
   const containerOngoing = document.getElementById("ongoingEventsWeb");
   const containerUpcoming = document.getElementById("upComingEventsWeb");
   const thumbnailCarousel = document.getElementById("thumbnail-carousel");
-  containerOngoing.innerHTML = "";
-  containerUpcoming.innerHTML = "";
-  thumbnailCarousel.innerHTML = "";
+  // containerOngoing.innerHTML = "";
+  // containerUpcoming.innerHTML = "";
+  // thumbnailCarousel.innerHTML = "";
 
   let slides = [];
   let currentSlide = 0;
@@ -228,10 +228,13 @@ function loadImages() {
       );
 
       div.appendChild(img);
+      console.log(data.eventType);
       if (data.eventType === "upcoming") {
-        const img = document.createElement("img");
-        img.src = data.url;
-        img.classList.add(
+        // Create thumbnail
+        containerUpcoming.classList.add("lg:w-[700px]");
+        const upComingEventCurrentPic = document.createElement("img");
+        upComingEventCurrentPic.src = data.url;
+        upComingEventCurrentPic.classList.add(
           "h-[250px]",
           "object-cover",
           "w-full",
@@ -240,13 +243,11 @@ function loadImages() {
           "md:object-cover",
           "rounded-lg"
         );
-        img.alt = data.alt || "";
-
-        slides.push(img);
-
-        // Create thumbnail
+        upComingEventCurrentPic.alt = data.alt || "";
+        containerUpcoming.appendChild(upComingEventCurrentPic);
         const thumbnailDiv = document.createElement("div");
         thumbnailDiv.classList.add("md:h-full");
+        // thumbnailDiv.appendChild(thumbImg);
         const thumbnailImg = document.createElement("img");
         thumbnailImg.src = data.url;
         thumbnailImg.classList.add(
@@ -258,12 +259,14 @@ function loadImages() {
           "thumbnail-image"
         );
         thumbnailImg.alt = data.alt || "";
+        slides.push(thumbnailImg);
         thumbnailDiv.appendChild(thumbnailImg);
         thumbnailCarousel.appendChild(thumbnailDiv);
       } else {
+        console.log("here");
         containerOngoing.appendChild(div);
       }
-      // containerOngoing.appendChild(div);
+      containerOngoing.appendChild(div);
       slides.push(div);
     });
 
