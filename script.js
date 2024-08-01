@@ -1,33 +1,52 @@
-let chart;
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
 
-async function fetchDistrictData() {
+const firebaseConfig = {
+  apiKey: "AIzaSyCycFbzihXVBYAbeVWwbNGlm7fFGeOicb8",
+  authDomain: "kcc24-277a5.firebaseapp.com",
+  projectId: "kcc24-277a5",
+  storageBucket: "kcc24-277a5.appspot.com",
+  messagingSenderId: "980169847772",
+  appId: "1:980169847772:web:a22c48a18a068014859519",
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const chart = {
+  instance: null,
+};
+
+let currentSlide = 0;
+let slides = [];
+
+async function fetchData(url) {
   try {
-    const response = await fetch(
-      "https://getparticipantscountbyzone-z6r2mciapa-uc.a.run.app/"
-    );
+    const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const districtData = await response.json();
-    return districtData;
+    return await response.json();
   } catch (error) {
     console.error("Error fetching data:", error);
+    throw error;
   }
 }
 
+async function fetchDistrictData() {
+  return fetchData(
+    "https://getparticipantscountbyzone-z6r2mciapa-uc.a.run.app/"
+  );
+}
+
 async function fetchCollegeData(district) {
-  try {
-    const response = await fetch(
-      `https://getparticipantscountbycampus-z6r2mciapa-uc.a.run.app/?zone=${district}`
-    );
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const collegeData = await response.json();
-    return collegeData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
+  return fetchData(
+    `https://getparticipantscountbycampus-z6r2mciapa-uc.a.run.app/?zone=${district}`
+  );
 }
 
 function updateDistrictSelect(districtData) {
@@ -127,12 +146,15 @@ function updateChart(chartData, totalRegistration) {
     },
   };
 
-  if (chart) {
-    chart.destroy();
+  if (chart.instance) {
+    chart.instance.destroy();
   }
 
-  chart = new ApexCharts(document.getElementById("column-chart"), options);
-  chart.render();
+  chart.instance = new ApexCharts(
+    document.getElementById("column-chart"),
+    options
+  );
+  chart.instance.render();
 
   document.getElementById("totalRegistration").textContent =
     totalRegistration.toLocaleString();
@@ -156,125 +178,122 @@ document
     console.log(chartData, totalRegistration);
   });
 
-// Initial load
-fetchDistrictData().then((districtData) => {
-  updateDistrictSelect(districtData);
-  const chartData = Object.entries(districtData).map(([key, value]) => ({
-    x: key,
-    y: value,
-  }));
-  const totalRegistration = chartData.reduce(
-    (total, data) => total + data.y,
-    0
-  );
-  updateChart(chartData, totalRegistration);
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.classList.remove("lazy");
+      observer.unobserve(img);
+    }
+  });
 });
 
-// firebase functions
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCycFbzihXVBYAbeVWwbNGlm7fFGeOicb8",
-  authDomain: "kcc24-277a5.firebaseapp.com",
-  projectId: "kcc24-277a5",
-  storageBucket: "kcc24-277a5.appspot.com",
-  messagingSenderId: "980169847772",
-  appId: "1:980169847772:web:a22c48a18a068014859519",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-let currentSlide = 0;
-let slides = [];
-
-function loadImages() {
+async function loadImages() {
   const containerOngoing = document.getElementById("ongoingEventsWeb");
   const containerUpcoming = document.getElementById("upComingEventsWeb");
   const thumbnailCarousel = document.getElementById("thumbnail-carousel");
-  // containerOngoing.innerHTML = "";
-  // containerUpcoming.innerHTML = "";
-  // thumbnailCarousel.innerHTML = "";
 
-  let slides = [];
-  let currentSlide = 0;
+  containerOngoing.innerHTML = "";
+  containerUpcoming.innerHTML = "";
+  thumbnailCarousel.innerHTML = "";
 
-  getDocs(collection(db, "images")).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      const div = document.createElement("div");
-      div.classList.add(
-        "hidden",
-        "duration-700",
-        "ease-in-out",
-        "absolute",
-        "inset-0"
-      );
+  const querySnapshot = await getDocs(collection(db, "images"));
+  const fragments = {
+    ongoing: document.createDocumentFragment(),
+    upcoming: document.createDocumentFragment(),
+    thumbnails: document.createDocumentFragment(),
+  };
 
-      const img = document.createElement("img");
-      img.src = data.url;
-      img.classList.add(
-        "absolute",
-        "object-cover",
-        "object-center",
-        "block",
-        "w-full",
-        "h-full"
-      );
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    const img = createImageElement(data.url, data.alt);
 
-      div.appendChild(img);
-      console.log(data.eventType);
-      if (data.eventType === "upcoming") {
-        // Create thumbnail
-        containerUpcoming.classList.add("lg:w-[700px]");
-        const upComingEventCurrentPic = document.createElement("img");
-        upComingEventCurrentPic.src = data.url;
-        upComingEventCurrentPic.classList.add(
-          "h-[250px]",
-          "object-cover",
-          "w-full",
-          "md:h-full",
-          "md:w-full",
-          "md:object-cover",
-          "rounded-lg"
-        );
-        upComingEventCurrentPic.alt = data.alt || "";
-        containerUpcoming.appendChild(upComingEventCurrentPic);
-        const thumbnailDiv = document.createElement("div");
-        thumbnailDiv.classList.add("md:h-full");
-        // thumbnailDiv.appendChild(thumbImg);
-        const thumbnailImg = document.createElement("img");
-        thumbnailImg.src = data.url;
-        thumbnailImg.classList.add(
-          "md:object-cover",
-          "h-auto",
-          "md:h-full",
-          "max-w-full",
-          "rounded-lg",
-          "thumbnail-image"
-        );
-        thumbnailImg.alt = data.alt || "";
-        slides.push(thumbnailImg);
-        thumbnailDiv.appendChild(thumbnailImg);
-        thumbnailCarousel.appendChild(thumbnailDiv);
-      } else {
-        console.log("here");
-        containerOngoing.appendChild(div);
-      }
-      containerOngoing.appendChild(div);
+    if (data.eventType === "ongoing") {
+      const div = createOngoingImageContainer(img);
+      fragments.ongoing.appendChild(div);
       slides.push(div);
-    });
+    } else {
+      const upComingEventCurrentPic = createUpcomingImageElement(
+        data.url,
+        data.alt
+      );
+      fragments.upcoming.appendChild(upComingEventCurrentPic);
 
-    if (slides.length > 0) {
-      showSlide(0);
-      setupEventListeners();
+      const thumbnailDiv = createThumbnailElement(data.url, data.alt);
+      fragments.thumbnails.appendChild(thumbnailDiv);
+      slides.push(thumbnailDiv);
     }
   });
+
+  containerOngoing.appendChild(fragments.ongoing);
+  containerUpcoming.appendChild(fragments.upcoming);
+  thumbnailCarousel.appendChild(fragments.thumbnails);
+
+  if (slides.length > 0) {
+    showSlide(0);
+    setupEventListeners();
+  }
+}
+
+function createImageElement(src, alt) {
+  const img = document.createElement("img");
+  img.classList.add("lazy");
+  img.dataset.src = src;
+  img.alt = alt || "";
+  imageObserver.observe(img);
+  return img;
+}
+
+function createOngoingImageContainer(img) {
+  const div = document.createElement("div");
+  div.classList.add(
+    "hidden",
+    "duration-700",
+    "ease-in-out",
+    "absolute",
+    "inset-0"
+  );
+  img.classList.add(
+    "absolute",
+    "object-cover",
+    "object-center",
+    "block",
+    "w-full",
+    "h-full"
+  );
+  div.appendChild(img);
+  return div;
+}
+
+function createUpcomingImageElement(src, alt) {
+  const img = createImageElement(src, alt);
+  img.classList.add(
+    "h-[250px]",
+    "object-cover",
+    "w-full",
+    "md:h-full",
+    "md:w-full",
+    "md:object-cover",
+    "rounded-lg"
+  );
+  return img;
+}
+
+function createThumbnailElement(src, alt) {
+  const div = document.createElement("div");
+  div.classList.add("md:h-full");
+  const img = createImageElement(src, alt);
+  img.classList.add(
+    "md:object-cover",
+    "h-auto",
+    "md:h-full",
+    "max-w-full",
+    "rounded-lg",
+    "thumbnail-image"
+  );
+  div.appendChild(img);
+  return div;
 }
 
 function showSlide(index) {
@@ -289,12 +308,12 @@ function showSlide(index) {
 
 function nextSlide() {
   currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
+  requestAnimationFrame(() => showSlide(currentSlide));
 }
 
 function prevSlide() {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
+  requestAnimationFrame(() => showSlide(currentSlide));
 }
 
 function setupEventListeners() {
@@ -308,4 +327,38 @@ function setupEventListeners() {
   setInterval(nextSlide, 5000);
 }
 
-window.onload = loadImages();
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("thumbnail-image")) {
+    const index = Array.from(event.target.parentNode.children).indexOf(
+      event.target
+    );
+    showImage(index);
+  }
+});
+
+function showImage(index) {
+  const mainImage = document
+    .getElementById("upComingEventsWeb")
+    .querySelector("img");
+  const thumbnails = document.querySelectorAll(".thumbnail-image");
+
+  mainImage.src = thumbnails[index].dataset.src;
+  thumbnails.forEach((thumb) => thumb.classList.remove("active"));
+  thumbnails[index].classList.add("active");
+}
+
+// Initial load
+fetchDistrictData().then((districtData) => {
+  updateDistrictSelect(districtData);
+  const chartData = Object.entries(districtData).map(([key, value]) => ({
+    x: key,
+    y: value,
+  }));
+  const totalRegistration = chartData.reduce(
+    (total, data) => total + data.y,
+    0
+  );
+  updateChart(chartData, totalRegistration);
+});
+
+window.onload = loadImages;
