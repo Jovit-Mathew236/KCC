@@ -249,13 +249,25 @@
             </p>
         </div>
         <div class="md:w-[500px] md:m-auto">
-            <!-- <embed class="w-full h-[450px] md:h-[750px]" type="application/pdf"
-                src="/assets/docs/KCC'24 TRAVEL DOCUMENT.pdf#zoom=100&view=FitH" width="100%"> -->
             <object class="w-full h-[500px] md:h-[750px]" type="application/pdf"
                 data="/assets/docs/KCC'24 TRAVEL DOCUMENT.pdf#zoom=100&view=FitH" width="100%">
-                <p>Your browser does not support PDFs.
-                    <a href="/assets/docs/KCC'24 TRAVEL DOCUMENT.pdf">Download the PDF</a> to view it.
-                </p>
+                <div class="text-center">
+                    <p class="mb-4">Your browser does not support PDFs. Click the image below to download the document.
+                    </p>
+                    <div class="relative inline-block group">
+                        <a href="/assets/docs/KCC'24 TRAVEL DOCUMENT.pdf" download>
+                            <img src="/assets/KCC'24 TRAVEL DOCUMENT-thumb.jpg" alt="Travel Document Thumbnail"
+                                class="max-w-full h-auto">
+                            <div
+                                class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button
+                                    class="bg-gray-500/70 hover:bg-blue-500/70 backdrop-blur-md text-white font-bold py-2 px-4 rounded">
+                                    Download PDF
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </object>
         </div>
     </section>
